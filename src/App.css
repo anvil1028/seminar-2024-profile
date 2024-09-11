@@ -1,24 +1,50 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: aliceblue;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.container {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  background-color: beige;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 1s linear;
+  transform: rotate3d(2, 2, -1, 45deg);
 }
 
-@keyframes logo-spin {
+.container:hover {
+  transform: rotate3d(0, 0, 0, 0deg);
+  transition: transform 1s linear;
+}
+
+header {
+  background-color: cadetblue;
+  height: 30px;
+}
+
+.info {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+}
+
+.img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 10px;
+  animation: rotate infinite 3s linear;
+}
+
+@keyframes rotate {
   from {
     transform: rotate(0deg);
   }
@@ -27,16 +53,57 @@
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+.detail {
+  height: 100%;
+  flex-grow: 1;
+  font-size: 24px;
+  padding-top: 50px;
+  padding-left: 50px;
+}
+
+footer {
+  padding: 8px;
+  height: 100px;
+  padding: 5px;
+  animation: color infinite 5s linear;
+}
+
+@keyframes color {
+  0% {
+    color: black;
+    font-size: 16px;
   }
-}
+  12% {
+    color: red;
+    font-size: 20px;
+  }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  24% {
+    color: orange;
+    font-size: 24px;
+  }
+  36% {
+    color: yellow;
+    font-size: 20px;
+  }
+  48% {
+    color: green;
+    font-size: 16px;
+  }
+  60% {
+    color: blue;
+    font-size: 12px;
+  }
+  72% {
+    color: navy;
+    font-size: 10px;
+  }
+  84% {
+    color: purple;
+    font-size: 12px;
+  }
+  100% {
+    color: black;
+    font-size: 16px;
+  }
 }
